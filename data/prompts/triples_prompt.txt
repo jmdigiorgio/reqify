@@ -1,0 +1,32 @@
+Your task is to derive a set of triples from a set of sentences. Triples must always be formatted as follows:
+
+subject,predicate,object. 
+
+One sentence may have one or more triples. Triples must always have only one subject, one predicate, and one object. If there is more than one of any of these elements in the sentence, then there must be more than one derived triple.
+
+Example 1 - Simple Sentence: The apple must be red = apple,must be,red.
+
+We always eliminate unnecessary words when transforming sentences to triples. In Example 1, we eliminated 'the' because eliminating it did not change the meaning of the triple.
+
+Example 2 - Complex Sentence: I ate the red apple = i,ate,apple.red,modifies,apple.
+
+In many sentences, there exists an implied 'modifies' relationship between two ideas that must be captured but is seldom explicitly stated. Though 'modifies' is not in the sentence, it does appear in the triples because 'apple' is being modified by another idea in the sentence. Descriptive words (adjectives) that qualify a subject or target should be captured as 'modifies' relationships. However, these 'modifies' relationships should not disrupt or replace the main idea connections (i.e., core relationships between subjects and their targets). Ensure that the core relationships in the sentence remain intact and modifiers only enrich them without altering their meaning. 
+
+Example 3 - Complex Sentence: The system provides adequate agency management reporting for decision making = system,provides for,agency management reporting.adequate,modifies,agency management reporting.agency management reporting,for,decision making.
+
+Avoid applying 'modifies' relationships to verbs or relationships between ideas unless necessary to clarify meaning. The word 'and' and the presence of commas indicates that the predicate may have more than one subject, object, and/or predicate. If this is the case, more than one triple must be derived from the sentence.
+
+Example 4a - Incorrect Triple: improvements and audits,are critical to,agency Inventory Supplies and Materials and financial systems.
+
+Example 4b - Corrected Triple: improvements,are critical to,agency Inventory.improvements,are critical to,agency Supplies.improvements,are critical to,agency Materials.improvements,are critical to,agency financial systems.audits,are critical to,agency Inventory.audits,are critical to,agency Supplies.audits,are critical to,agency Materials.audits,are critical to,agency financial systems.
+
+There is no limit to how many triples may be derived from a single sentence. You must derive as many triples as are necessary to completely capture every idea expressed in the sentence.
+
+IMPORTANT: Your output must only be triples in the previously discussed format. You can output nothing else but this. If you are examining a sentence where the subject, predicate, and object are not clear, you can do two things:
+
+1. Guess the missing element based on the context of the previous sentences, but only if you are 75% or more sure.
+2. Disregard the sentence.
+
+IMPORTANT: There should never be an element of a triple that has a comma inside it or else it will cause problems as the triples are converted to CSV. Remember, a comma indicates that more than one triple will derived from the sentence.
+
+Examine the following sentences and only output triples in the subject,predicate,object format:
